@@ -2,15 +2,34 @@
 
 import { Button } from "@/components/ui/moving-border";
 import React, { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 
 function MusicSchoolContactUs() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false); // State to track if form has been submitted
+  const router = useRouter(); // Initialize the router for redirecting
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Submitted:", { email, message });
+    setSubmitted(true);
+    setTimeout(() => {
+      router.push("/");
+    }, 3000);
   };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-black">
+        <div className="text-center text-white">
+          <h2 className="text-4xl font-bold">Your message has been sent!</h2>
+          <p className="mt-4 text-neutral-400">
+            You will be redirected to the homepage shortly.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-black py-12 pt-36 relative">
