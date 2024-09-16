@@ -2,6 +2,8 @@
 
 Welcome to the Music Academy app, built with Next.js and TypeScript! This application is designed to provide a rich and interactive platform for music education, leveraging modern web technologies to deliver a seamless user experience.
 
+![Main Image](./public/home.png)
+
 ## Table of Contents
 
 - [Music Academy](#music-academy)
@@ -45,7 +47,7 @@ To get a local copy up and running, follow these steps:
    npm install
   ```
 
-2. **Start the development server:**
+3. **Start the development server:**
   ```bash
    npm run dev
   ```
