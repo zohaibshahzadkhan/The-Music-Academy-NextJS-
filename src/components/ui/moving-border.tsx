@@ -18,6 +18,7 @@ export function Button({
   borderClassName,
   duration,
   className,
+  showMovingBorder = true,
   ...otherProps
 }: {
   borderRadius?: string;
@@ -27,6 +28,7 @@ export function Button({
   borderClassName?: string;
   duration?: number;
   className?: string;
+  showMovingBorder?: Boolean;
   [key: string]: any;
 }) {
   return (
@@ -44,14 +46,16 @@ export function Button({
         className="absolute inset-0"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
-        <MovingBorder duration={duration} rx="30%" ry="30%">
-          <div
-            className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]",
-              borderClassName
-            )}
-          />
-        </MovingBorder>
+        {showMovingBorder ? (
+          <MovingBorder duration={duration} rx="30%" ry="30%">
+            <div
+              className={cn(
+                "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]",
+                borderClassName
+              )}
+            />
+          </MovingBorder>
+        ) : null}
       </div>
 
       <div
