@@ -1,9 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { FloatingNav } from "./ui/floating-navbar";
 
-const Navbar = ({ className }: { className?: string }) => {
+const Navbar = () => {
   const navItems = [
     {
       name: "Home",
